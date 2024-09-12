@@ -1,0 +1,5 @@
+Api key - 1VOu2irrDcL6ezc8iQhPwmeZdPWA5MsA, dS8FC96dlASLH1aPuEUujHm2ALSwHaE8
+Api link za prognozu, ubaciti city kod:
+http://dataservice.accuweather.com/forecasts/v1/daily/1day/"cityCode"
+Api link za dohvatiti city kod po textu:
+http://dataservice.accuweather.com/locations/v1/cities/search
