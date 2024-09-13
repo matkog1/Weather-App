@@ -1,8 +1,6 @@
-package hr.algebra.myandroidapp.api
+package hr.algebra.myandroidapp.api.ApiCalls
 
-import hr.algebra.myandroidapp.api.data.ForecastModels.DailyForecasts
 import hr.algebra.myandroidapp.api.data.ForecastModels.Forecast
-import hr.algebra.myandroidapp.api.model.ForecastsModel
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

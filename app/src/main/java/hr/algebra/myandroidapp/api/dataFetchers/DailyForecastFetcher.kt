@@ -1,11 +1,12 @@
-package hr.algebra.myandroidapp.api
+package hr.algebra.myandroidapp.api.dataFetchers
 
 import android.content.Context
 import android.util.Log
-import hr.algebra.myandroidapp.MyAppReceiver
+import hr.algebra.myandroidapp.api.ApiCalls.DailyForecestApi
+import hr.algebra.myandroidapp.api.ApiCalls.FORECAST_API_URL
+import hr.algebra.myandroidapp.api.callbacks.ForecastCallback
 import hr.algebra.myandroidapp.api.data.ForecastModels.Forecast
 import hr.algebra.myandroidapp.api.model.ForecastsModel
-import hr.algebra.myandroidapp.framework.sendBroadcast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,7 +27,7 @@ class DailyForecastFetcher(private val context: Context) {
     }
 
     fun fetchForecast(cityKey: String, callback: ForecastCallback) {
-        val request = forecastApi.getDailyForecast(cityKey, "dS8FC96dlASLH1aPuEUujHm2ALSwHaE8")
+        val request = forecastApi.getDailyForecast(cityKey, "NtkGjjljnlvoCOXTGoybr5mT0YFcU7bv")
 
         request.enqueue(object : Callback<Forecast> {
             override fun onResponse(call: Call<Forecast>, response: Response<Forecast>) {

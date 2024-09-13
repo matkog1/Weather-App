@@ -1,4 +1,4 @@
-package hr.algebra.myandroidapp.api
+package hr.algebra.myandroidapp.api.callbacks
 
 import hr.algebra.myandroidapp.api.model.ForecastsModel
 
