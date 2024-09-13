@@ -1,4 +1,4 @@
-package hr.algebra.myandroidapp.api.ApiCalls
+package hr.algebra.myandroidapp.api.apiCalls
 
 import hr.algebra.myandroidapp.api.data.ForecastModels.Forecast
 import retrofit2.Call

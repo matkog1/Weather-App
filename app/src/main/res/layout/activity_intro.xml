@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Intro_Activity">
+
+    <ImageView
+        android:id="@+id/ivStartupIcon"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="@dimen/_10dp"
+        android:src="@drawable/weather"/>
+
+    <TextView
+        android:id="@+id/tvStartupText"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="@dimen/_10dp"
+        android:text="@string/please_wait"
+        android:gravity="center"
+        android:textSize="@dimen/_50dp"/>
+
+</LinearLayout>

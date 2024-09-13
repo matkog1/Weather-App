@@ -68,24 +68,30 @@ class Weather_Activity : AppCompatActivity() {
         fetcher.fetchForecast(cityKey, object : ForecastCallback {
             override fun onSuccess(forecast: ForecastsModel) {
 
-                val dailyForecast = forecast.dailyForecasts[0]
+                val dailyForecast = forecast.dailyForecasts.getOrNull(0) ?: return
 
-                updateTemperature(dailyForecast.temperature.maximum.value.toString())
-                updateAlert(forecast.headline.text)
-                updateDayIconPhrase(dailyForecast.day.iconPhrase)
-                updateNightIconPhrase(dailyForecast.night.iconPhrase)
+                val temperature = dailyForecast.temperature.maximum.value.toString() ?: "N/A"
+                val alert = forecast.headline?.text ?: "No Alert"
+                val dayIconPhrase = dailyForecast.day.iconPhrase ?: "No Data"
+                val nightIconPhrase = dailyForecast.night.iconPhrase ?: "No Data"
+
+                updateTemperature(temperature)
+                updateAlert(alert)
+                updateDayIconPhrase(dayIconPhrase)
+                updateNightIconPhrase(nightIconPhrase)
+                updateWeatherImage(dailyForecast.day.iconPhrase)
 
                 updatePrecipitation(
                     dailyForecast.day.hasPrecipitation,
-                    dailyForecast.day.precipitationType,
-                    dailyForecast.day.precipitationIntensity.toString(),
+                    dailyForecast.day.precipitationType ?: "No Data",
+                    dailyForecast.day.precipitationIntensity ?: "0",
                     binding.tvDayPrecipitation
                 )
 
                 updatePrecipitation(
                     dailyForecast.night.hasPrecipitation,
-                    dailyForecast.night.precipitationType,
-                    dailyForecast.night.precipitationIntensity.toString(),
+                    dailyForecast.night.precipitationType ?: "No Data",
+                    dailyForecast.night.precipitationIntensity ?: "0",
                     binding.tvNightPrecipitation
                 )
             }
@@ -96,8 +102,28 @@ class Weather_Activity : AppCompatActivity() {
         })
     }
 
+    private fun updateWeatherImage(condition: String) {
+        val imageResource = when (condition) {
+            "Sunny" -> R.drawable.sunny
+            "Mostly sunny" -> R.drawable.mostly_sunny
+            "Partly sunny" -> R.drawable.partly_sunny
+            "Cloudy" -> R.drawable.cloudy
+            "Mostly cloudy" -> R.drawable.mostly_cloudy
+            "Mostly Cloudy w/ Showers" -> R.drawable.mostly_cloudy_with_showers
+            "T-Storms" -> R.drawable.t_storms
+            "Showers" -> R.drawable.showers
+            "Windy" -> R.drawable.windy
+            "Cold" -> R.drawable.cold
+            "Hot" -> R.drawable.hot
+            "Rain" -> R.drawable.rain
+            "Snow" -> R.drawable.snow
+            else -> R.drawable.weather_forecast_default
+        }
+        binding.ivWeatherIcon.setImageResource(imageResource)
+    }
+
     private fun updateTemperature(temperature: String) {
-        binding.tvTemperature.text = temperature
+        binding.tvTemperature.text = temperature+"°C"
     }
 
     private fun updateAlert(alert: String) {

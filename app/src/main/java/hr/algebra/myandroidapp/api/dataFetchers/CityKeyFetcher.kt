@@ -1,8 +1,8 @@
 package hr.algebra.myandroidapp.api.dataFetchers
 
 import android.content.Context
-import hr.algebra.myandroidapp.api.ApiCalls.CITY_API_URL
-import hr.algebra.myandroidapp.api.ApiCalls.CityApi
+import hr.algebra.myandroidapp.api.apiCalls.CITY_API_URL
+import hr.algebra.myandroidapp.api.apiCalls.CityApi
 import hr.algebra.myandroidapp.api.callbacks.CityKeyCallback
 import hr.algebra.myandroidapp.api.data.CityModels.City
 import retrofit2.Call
