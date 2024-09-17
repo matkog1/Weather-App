@@ -27,7 +27,7 @@ class DailyForecastFetcher(private val context: Context) {
     }
 
     fun fetchForecast(cityKey: String, callback: ForecastCallback) {
-        val request = forecastApi.getDailyForecast(cityKey, "mAUQqgpAW5xF8kj9qNEEip6HeENcYZKR")
+        val request = forecastApi.getDailyForecast(cityKey, "vTjUymHKw4Uw5n9AfGuhpij19xHu0LdX")
 
         request.enqueue(object : Callback<Forecast> {
             override fun onResponse(call: Call<Forecast>, response: Response<Forecast>) {

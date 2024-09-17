@@ -14,6 +14,12 @@ import hr.algebra.myandroidapp.api.dataFetchers.DailyForecastFetcher
 import hr.algebra.myandroidapp.api.callbacks.ForecastCallback
 import hr.algebra.myandroidapp.api.model.ForecastsModel
 import hr.algebra.myandroidapp.databinding.ActivityWeatherBinding
+import android.view.Menu
+import android.view.MenuItem
+import hr.algebra.myandroidapp.R
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
+import androidx.recyclerview.widget.LinearLayoutManager
 
 
 class Weather_Activity : AppCompatActivity() {
@@ -32,8 +38,12 @@ class Weather_Activity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
+        setDefaultCity()
         setupSearchView()
+    }
+
+    private fun setDefaultCity() {
+        fetchCityKey("zagreb")
     }
 
     private fun setupSearchView() {

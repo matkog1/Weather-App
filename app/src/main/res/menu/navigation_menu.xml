@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item
-        android:id="@+id/menuItems"
-        android:title="@string/items"
-        android:icon="@drawable/ic_launcher_background"/>
-
     <item
         android:id="@+id/menuAbout"
         android:title="@string/about"
-        android:icon="@drawable/ic_launcher_background"/>
+        android:icon="@drawable/about"/>
 </menu>
